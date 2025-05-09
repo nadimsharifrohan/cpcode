@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+class Mass {
+    private: int gram;
+    public: Mass() {
+        gram = 0;
+    }
+    Mass(int x) {
+        gram = x;
+    }
+    void display() {
+        cout << "Mass in gram: " << gram << endl;
+    }
+    void operator++()
+    {
+        ++gram;
+    }
+    void operator++(int) {
+        gram++;
+    }
+    void operator--() {
+        --gram;
+    }
+    void operator--(int) {
+        gram--;
+    }
+
+};
+int main() {
+    Mass obj;
+    obj.display();
+    ++obj;
+    obj.display();
+    obj++;
+    obj.display();
+    --obj;
+    obj.display();
+    obj--;
+    obj.display();
+    return 0;
+
+}

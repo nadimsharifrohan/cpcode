@@ -1,0 +1,46 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+class charlie
+{
+    public: int x,
+    y;
+    void blue() {
+        cin >> x >> y;
+    }
+    charlie operator && (charlie i)
+    {
+        charlie red;
+        red.x = x && i.x;
+        red.y = y && i.y;
+        return red;
+
+    }
+    charlie operator || (charlie m) {
+        charlie green;
+        green.x = x || m.x;
+        green.y = y || m.y;
+        return green;
+
+    }
+
+    void display() {
+
+        x = !x;
+        y = !y;
+
+        cout << "  " << x << "  " << y;
+    }
+
+};
+
+int main() {
+    charlie a1, a2, a3, a4;
+    a1.blue();
+    a2.blue();
+    a3 = a1 && a2;
+    a4 = a1 || a2;
+    a3.display();
+    a4.display();
+    return 0;
+}
